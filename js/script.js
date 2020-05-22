@@ -15,6 +15,12 @@ $(document).ready(function() {
     $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixedOffset}, 1000);
     e.preventDefault();
   });
+
+  $(document).on('click', '.toggle-menu', function(){
+    $(this).toggleClass('on');
+    $('.header-menu').slideToggle();
+    return false;
+  });
 })
 
 
