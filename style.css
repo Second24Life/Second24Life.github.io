@@ -38,6 +38,7 @@ body {
     color: #000;
 
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -72,8 +73,25 @@ section {
 header.container {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     padding-top: 10px;
     padding-bottom: 10px;
+    z-index: 99;
+}
+
+header:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background: #e6f4ff;
 }
 
 header .header-logo {
@@ -92,6 +110,30 @@ header .header-menu ul li {
     margin: 0 10px;
 }
 
+header ul li a {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 800;
+    color: royalblue;
+    overflow: hidden;
+    background: linear-gradient(to right, #7C1F7C, #7C1F7C 50%, royalblue 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+}
+
+header ul li a:hover {
+    background-position: 0 100%;
+}
+
+header.fixed:after {
+    height: 100%;
+}
+
 header .menu-toggler {
     display: none;
 }
@@ -105,15 +147,27 @@ section h2 {
     flex-wrap: wrap;
 }
 
-#services .services-item {
-    display: flex;
+#services .wrapper {
+    padding: 30px;
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+#services .services-item {
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 30px 10px;
+    border: 3px solid transparent;
     border-radius: 5px;
     box-shadow: 0 10px 18px 5px #dfe4ea;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+#services .services-item:hover {
+    border-color: #7C1F7C;
+    box-shadow: 0 10px 18px 5px #929599;
 }
 
 #services .services-item .icon svg{
