@@ -127,6 +127,18 @@ hr {
   color: #7952b3;
 }
 
+@media (max-width: 768px) {
+  #hello h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 450px) {
+  #hello h1 {
+    font-size: 45px;
+  }
+}
+
 #hello h2 {
   color: #c0c0c0;
   font-weight: 400;
@@ -141,6 +153,11 @@ hr {
   margin-bottom: 0px;
 }
 
+#about_me .photo img {
+  border-radius: 50%;
+  width: 100%;
+}
+
 #about_me h3 {
   color: white;
   font-weight: 400;
@@ -153,10 +170,15 @@ hr {
   font-size: 20px;
 }
 
-/* #portfolio img {
-  max-width: 300px;
-  max-height: 300px;
-} */
+/* Portfolio me */
+
+#portfolio .item {
+  margin-bottom: 10px;
+}
+
+#portfolio img {
+  max-width: 100%;
+}
 
 /* Skills */
 
